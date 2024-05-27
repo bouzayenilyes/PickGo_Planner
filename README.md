@@ -1,7 +1,6 @@
 <!-- prettier-ignore -->
 <p align="center">
 <img src="public/logo256.png" width="128px" />
-<h1>PickGo Planner </h1>
 </p>
 
 <p align="center">
