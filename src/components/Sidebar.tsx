@@ -318,12 +318,12 @@ export const ProfileSidebar = () => {
         <StyledMenuItem
           className="bmcMenu"
           onClick={() => {
-            window.open("https://www.buymeacoffee.com/Bouzayenilyes");
+            window.open("https://www.facebook.com/people/PICKGOnet/61560225538301/?mibextid=ZbWKwL");
           }}
         >
-          <BmcIcon className="bmc-icon" src={bmcLogo} /> &nbsp; Buy me a coffee{" "}
+          <BmcIcon className="bmc-icon" src={bmcLogo} /> &nbsp; Facebook{" "}
           {bmcSupporters && (
-            <Tooltip title={`${bmcSupporters} supporters on Buy me a coffee`}>
+            <Tooltip title={`${bmcSupporters} supporters on Facebook`}>
               <MenuLabel clr="#f93c58">
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <FavoriteRounded style={{ fontSize: "16px" }} />
