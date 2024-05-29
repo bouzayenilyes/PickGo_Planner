@@ -8,7 +8,7 @@ interface BMCResponse {
  * @returns Number of buy me a coffee supporters.
  */
 export const fetchBMCInfo = async (): Promise<BMCResponse> => {
-  const username = "maciekt07";
+  const username = "bouzayenilyes";
   const url = `https://img.buymeacoffee.com/button-api/?&slug=${username}`;
   try {
     // Fetch data from the provided URL
