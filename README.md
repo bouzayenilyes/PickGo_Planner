@@ -1,50 +1,52 @@
-<!-- prettier-ignore -->
 <p align="center">
-<img src="public/logo256.png" width="128px" />
+  <img src="public/logo256.png" width="128px" />
 </p>
 
-<p align="center">
+# PickGo - ToDo List App
 
-<h1> PickGo - ToDo List App </h1>
-Welcome to PickGo, a versatile and user-friendly ToDo list application designed to help you organize your tasks efficiently. This project was developed during the Hackathon Collége de Paris v2.0 as a collaborative effort between Ilyes Bouzayen, the UI/UX designer and developer, and Foued Aydi, the graphic designer and marketer.
+Welcome to **PickGo**, a versatile and user-friendly ToDo list application designed to help you organize your tasks efficiently. Developed during the Hackathon Collége de Paris v2.0, this project is a collaborative effort between **Ilyes Bouzayen**, UI/UX designer and developer, and **Foued Aydi**, graphic designer and marketer.
 
-<h2> Overview </h2> 
-PickGo is designed to be an intuitive and powerful tool to help you keep track of your tasks and improve productivity. With a clean and modern interface, PickGo makes task management easy and enjoyable.
+---
 
-<h2>Features</h2>
+## Overview
+PickGo is designed to be an intuitive and powerful tool for tracking tasks and enhancing productivity. With its clean, modern interface, PickGo makes task management straightforward and enjoyable.
 
-Simple Task Creation: Easily add tasks with a few taps.
-Task Organization: Organize tasks by categories, due dates, and priorities.
-Notifications: Set reminders to ensure you never miss a deadline.
-Customizable UI: Personalize the app's appearance to suit your preferences.
-Data Synchronization: Sync your tasks across multiple devices.
+## Features
+- **Simple Task Creation**: Add tasks effortlessly with just a few taps.
+- **Task Organization**: Organize tasks by categories, due dates, and priorities.
+- **Notifications**: Set reminders to ensure you never miss a deadline.
+- **Customizable UI**: Personalize the app's appearance to suit your preferences.
+- **Data Synchronization**: Sync your tasks across multiple devices.
 
-<h2>Usage</h2>
+## Usage
 
-Adding a Task
-Open the app and navigate to the main dashboard.
-Tap the "Add Task" button.
-Enter the task details such as title, description, category, due date, and priority.
-Save the task to add it to your list.
-Editing or Deleting a Task
-Select the task you want to edit or delete from your list.
-Tap the "Edit" button to modify the task details or the "Delete" button to remove the task.
-Save the changes or confirm the deletion.
-Setting Reminders
-Open the task details for the task you want to set a reminder for.
-Tap the "Set Reminder" button.
-Choose the date and time for the reminder.
-Save the reminder to ensure you get notified.
+### Adding a Task
+1. Open the app and navigate to the main dashboard.
+2. Tap the "Add Task" button.
+3. Enter the task details (title, description, category, due date, and priority).
+4. Save the task to add it to your list.
 
-<h2>Contribution</h2>
+### Editing or Deleting a Task
+1. Select the task you want to edit or delete from your list.
+2. Tap the "Edit" button to modify task details, or the "Delete" button to remove it.
+3. Save changes or confirm the deletion.
+
+### Setting Reminders
+1. Open the task details for the task you want to set a reminder for.
+2. Tap the "Set Reminder" button.
+3. Choose the date and time for the reminder.
+4. Save the reminder to ensure you get notified.
+
+## Contribution
 This project was made possible by the collaborative efforts of:
+- **Ilyes Bouzayen**: UI/UX Designer and Developer
+- **Foued Aydi**: Graphic Designer and Marketer
 
-Ilyes Bouzayen: UI/UX Designer and Developer
-Foued Aydi: Graphic Designer and Marketer
-Contact
+## Contact
 For support, feedback, or collaboration opportunities, please contact us at:
 
-Email: support@pickgo.com
-Twitter: @PickGoApp
-Facebook: PickGo
+- **Email**: support@pickgo.com
+- **Twitter**: [@PickGoApp](https://twitter.com/PickGoApp)
+- **Facebook**: [PickGo](https://facebook.com/PickGo)
+
 Thank you for choosing PickGo! We hope it helps you stay organized and productive.
