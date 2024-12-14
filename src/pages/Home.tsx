@@ -219,7 +219,14 @@ const Home = () => {
           </AddButton>
         </Tooltip>
       )}
-      <PomodoroTimer open={pomodoroOpen} onClose={() => setPomodoroOpen(false)} />
+      {pomodoroOpen && (
+        <PomodoroTimer 
+          dailyProgress={settings[0].totalPomodoros} 
+          dailyGoal={settings[0].dailyGoal} 
+          open={pomodoroOpen} 
+          onClose={() => setPomodoroOpen(false)} 
+        />
+      )}
     </>
   );
 };

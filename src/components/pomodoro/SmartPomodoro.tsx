@@ -13,7 +13,6 @@ import {
   FormControlLabel,
   Divider,
   Slider,
-  TextField,
 } from '@mui/material';
 import {
   PlayArrow,
@@ -58,7 +57,12 @@ const ControlsContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(3),
 }));
 
-const SmartPomodoro: React.FC = () => {
+interface SmartPomodoroProps {
+  dailyProgress?: number;
+  dailyGoal?: number;
+}
+
+const SmartPomodoro: React.FC<SmartPomodoroProps> = ({ dailyProgress = 0, dailyGoal = 8 }) => {
   const { state, dispatch } = usePomodoroContext();
   const [showSettings, setShowSettings] = useState(false);
   const [currentTip, setCurrentTip] = useState<any>(null);
@@ -273,8 +277,12 @@ const SmartPomodoro: React.FC = () => {
                     })}
                   />
                 }
-                label="Notifications"
-                icon={<Notifications />}
+                label={
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    Notifications
+                    <Notifications sx={{ ml: 1 }} />
+                  </Box>
+                }
               />
             </Box>
             <Box sx={{ mb: 3 }}>

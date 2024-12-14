@@ -68,27 +68,27 @@ const StateButton = styled(Button)<{ selected?: boolean }>(({ theme, selected })
   minWidth: '100px',
   backgroundColor: selected 
     ? getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-      ? 'rgba(255, 255, 255, 0.15)'
-      : 'rgba(0, 0, 0, 0.1)'
+      ? alpha(theme.palette.background.paper, 0.8)
+      : alpha(theme.palette.background.default, 0.8)
     : 'transparent',
   color: getFontColor(theme.palette.secondary.main),
   '&:hover': {
     backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-      ? 'rgba(255, 255, 255, 0.2)'
-      : 'rgba(0, 0, 0, 0.15)',
+      ? alpha(theme.palette.background.paper, 0.9)
+      : alpha(theme.palette.background.default, 0.9),
   },
 }));
 
 const ControlButton = styled(IconButton)(({ theme }) => ({
   color: getFontColor(theme.palette.secondary.main),
   backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-    ? 'rgba(255, 255, 255, 0.1)'
-    : 'rgba(0, 0, 0, 0.05)',
+    ? alpha(theme.palette.background.paper, 0.8)
+    : alpha(theme.palette.background.default, 0.8),
   padding: '12px',
   '&:hover': {
     backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-      ? 'rgba(255, 255, 255, 0.2)'
-      : 'rgba(0, 0, 0, 0.1)',
+      ? alpha(theme.palette.background.paper, 0.9)
+      : alpha(theme.palette.background.default, 0.9),
   },
   '& .MuiSvgIcon-root': {
     fontSize: '1.5rem',
@@ -101,8 +101,8 @@ const CycleIndicator = styled(Box)(({ theme }) => ({
   padding: '8px 16px',
   borderRadius: '12px',
   backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-    ? 'rgba(255, 255, 255, 0.1)'
-    : 'rgba(0, 0, 0, 0.05)',
+    ? alpha(theme.palette.background.paper, 0.8)
+    : alpha(theme.palette.background.default, 0.8),
 }));
 
 const CycleDot = styled(Box)<{ active?: boolean; completed?: boolean }>(({ theme, active, completed }) => ({
@@ -112,8 +112,8 @@ const CycleDot = styled(Box)<{ active?: boolean; completed?: boolean }>(({ theme
   backgroundColor: completed 
     ? theme.palette.primary.main 
     : active 
-      ? 'rgba(255, 255, 255, 0.8)' 
-      : 'rgba(255, 255, 255, 0.2)',
+      ? alpha(theme.palette.primary.main, 0.8) 
+      : alpha(theme.palette.primary.main, 0.2),
   transition: 'all 0.3s ease',
 }));
 
@@ -124,8 +124,8 @@ const StatsContainer = styled(Box)(({ theme }) => ({
   padding: '1rem',
   borderRadius: '16px',
   backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-    ? 'rgba(255, 255, 255, 0.1)'
-    : 'rgba(0, 0, 0, 0.05)',
+    ? alpha(theme.palette.background.paper, 0.8)
+    : alpha(theme.palette.background.default, 0.8),
   marginTop: '1rem',
 }));
 
@@ -156,8 +156,8 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
     height: '6px',
     borderRadius: '3px',
     backgroundColor: getFontColor(theme.palette.secondary.main) === ColorPalette.fontLight 
-      ? 'rgba(255, 255, 255, 0.1)'
-      : 'rgba(0, 0, 0, 0.1)',
+      ? alpha(theme.palette.background.paper, 0.8)
+      : alpha(theme.palette.background.default, 0.8),
     '& .MuiLinearProgress-bar': {
       backgroundColor: POMODORO_STATES[currentState].color,
     },
@@ -270,8 +270,8 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
         flexDirection: 'column',
         alignItems: 'center',
         background: theme => getFontColor(theme.secondary) === ColorPalette.fontLight 
-          ? '#090b2258'
-          : '#ffffff3e',
+          ? alpha(theme.palette.background.paper, 0.8)
+          : alpha(theme.palette.background.default, 0.8),
         backdropFilter: 'blur(10px)',
         minHeight: '80vh',
         color: theme => getFontColor(theme.secondary),
@@ -284,13 +284,13 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
             p: 4,
             borderRadius: '24px',
             bgcolor: theme => getFontColor(theme.secondary) === ColorPalette.fontLight 
-              ? '#090b2287'
-              : '#ffffff5c',
+              ? alpha(theme.palette.background.paper, 0.8)
+              : alpha(theme.palette.background.default, 0.8),
             border: '1px solid',
             borderColor: theme => 
               getFontColor(theme.secondary) === ColorPalette.fontLight 
-                ? '#44479cb7' 
-                : theme.primary,
+                ? alpha(theme.palette.primary.main, 0.8) 
+                : theme.palette.primary.main,
             backdropFilter: 'blur(10px)',
           }}
         >

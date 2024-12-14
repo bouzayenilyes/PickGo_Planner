@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import { POMODORO_LEVELS, ACHIEVEMENTS } from '../components/pomodoro/PomodoroStats';
+import { POMODORO_LEVELS } from '../components/pomodoro/PomodoroStats';
 import { triggerConfetti } from '../utils/confetti';
 
-interface PomodoroState {
+export interface PomodoroState {
   totalPomodoros: number;
   dailyStreak: number;
   weeklyPomodoros: number;
@@ -54,7 +54,7 @@ interface PomodoroState {
   };
 }
 
-type PomodoroAction =
+export type PomodoroAction =
   | { type: 'COMPLETE_POMODORO' }
   | { type: 'UPDATE_STREAK' }
   | { type: 'UNLOCK_ACHIEVEMENT'; achievement: string }
@@ -66,7 +66,10 @@ type PomodoroAction =
   | { type: 'LOG_DISTRACTION' }
   | { type: 'UPDATE_FOCUS_SCORE'; score: number }
   | { type: 'TOGGLE_FOCUS_MODE' }
-  | { type: 'ADJUST_WORK_DURATION'; duration: number };
+  | { type: 'ADJUST_WORK_DURATION'; duration: number }
+  | { type: 'SET_TIME_LEFT'; timeLeft: number }
+  | { type: 'SET_MODE'; mode: 'work' | 'shortBreak' | 'longBreak' }
+  | { type: 'RESET_CYCLE' };
 
 const initialState: PomodoroState = {
   totalPomodoros: 0,
