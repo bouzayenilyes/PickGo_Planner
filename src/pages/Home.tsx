@@ -1,6 +1,5 @@
 import { useState, useEffect, ReactNode, useContext, useMemo } from "react";
 import { TasksList } from "../components";
-import PomodoroTimer from '../components/pomodoro/PomodoroTimer';
 import {
   AddButton,
   GreetingHeader,
@@ -17,9 +16,9 @@ import {
 
 import { displayGreeting, getRandomGreeting, getTaskCompletionText } from "../utils";
 import { Emoji } from "emoji-picker-react";
-import { Box, Tooltip, Typography, IconButton } from "@mui/material";
+import { Box, Tooltip, Typography } from "@mui/material";
 import { useOnlineStatus } from "../hooks/useOnlineStatus";
-import { AddRounded, TodayRounded, WifiOff, Timer as TimerIcon } from "@mui/icons-material";
+import { AddRounded, TodayRounded, WifiOff } from "@mui/icons-material";
 import { UserContext } from "../contexts/UserContext";
 import { useResponsiveDisplay } from "../hooks/useResponsiveDisplay";
 import { useNavigate } from "react-router-dom";
@@ -34,8 +33,6 @@ const Home = () => {
 
   const [tasksWithDeadlineTodayCount, setTasksWithDeadlineTodayCount] = useState<number>(0);
   const [tasksDueTodayNames, setTasksDueTodayNames] = useState<string[]>([]);
-
-  const [pomodoroOpen, setPomodoroOpen] = useState(false);
 
   const completedTaskPercentage = useMemo<number>(
     () => (completedTasksCount / tasks.length) * 100,
@@ -107,45 +104,12 @@ const Home = () => {
   return (
     <>
       <GreetingHeader>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Emoji unified="1f44b" emojiStyle={emojisStyle} /> &nbsp; {displayGreeting()}
-          {name && (
-            <span translate="no">
-              , <span>{name}</span>
-            </span>
-          )}
-          <Tooltip title="Focus Timer" placement="bottom">
-            <IconButton
-              onClick={() => setPomodoroOpen(true)}
-              sx={{
-                color: 'white',
-                backgroundColor: 'primary.main',
-                width: '40px',
-                height: '40px',
-                ml: 2,
-                '&:hover': {
-                  backgroundColor: 'primary.dark',
-                  transform: 'scale(1.1)',
-                },
-                transition: 'all 0.3s ease-in-out',
-                animation: 'pulse 2s infinite',
-                '@keyframes pulse': {
-                  '0%': {
-                    boxShadow: '0 0 0 0 rgba(124, 58, 237, 0.4)',
-                  },
-                  '70%': {
-                    boxShadow: '0 0 0 10px rgba(124, 58, 237, 0)',
-                  },
-                  '100%': {
-                    boxShadow: '0 0 0 0 rgba(124, 58, 237, 0)',
-                  },
-                },
-              }}
-            >
-              <TimerIcon sx={{ fontSize: 24 }} />
-            </IconButton>
-          </Tooltip>
-        </Box>
+        <Emoji unified="1f44b" emojiStyle={emojisStyle} /> &nbsp; {displayGreeting()}
+        {name && (
+          <span translate="no">
+            , <span>{name}</span>
+          </span>
+        )}
       </GreetingHeader>
       <GreetingText key={greetingKey}>{renderGreetingWithEmojis(randomGreeting)}</GreetingText>
       {!isOnline && (
@@ -218,14 +182,6 @@ const Home = () => {
             <AddRounded style={{ fontSize: "44px" }} />
           </AddButton>
         </Tooltip>
-      )}
-      {pomodoroOpen && (
-        <PomodoroTimer 
-          dailyProgress={settings[0].totalPomodoros} 
-          dailyGoal={settings[0].dailyGoal} 
-          open={pomodoroOpen} 
-          onClose={() => setPomodoroOpen(false)} 
-        />
       )}
     </>
   );
