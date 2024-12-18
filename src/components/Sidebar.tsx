@@ -398,7 +398,7 @@ export const ProfileSidebar = () => {
               style={{ textDecoration: "none", color: "inherit" }}
               href="https://github.com/Bouzayenilyes"
             >
-              Bouzayenilyes
+              NeoVimmer
             </a>
           </CreditsContainer>
           <CreditsContainer>
